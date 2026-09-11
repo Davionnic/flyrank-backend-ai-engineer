@@ -1,134 +1,95 @@
-# Portfolio Sitemap & Toolkit
+# Week 1 Submission — Portfolio Sitemap & Toolkit
 
 **Dave Andrei Almia Gallo · Backend AI Engineer @ FlyRank · Week 1**
 
+**Submit this link:** https://github.com/Davionnic/flyrank-backend-ai-engineer/blob/main/work/week-1/sitemap-toolkit.md
+
 Brief: [sitemap-toolkit-brief.md](./sitemap-toolkit-brief.md)
+
+---
 
 ## Proof inputs (locked)
 
-**Claim:** I ship backend services that put AI behind real checks: ownership is explicit, evals catch failure modes, and I only claim what a run can prove.
-
-**Person:** A backend engineering manager hiring for AI-featured products.
-
-**Action:** Email me about a junior backend / AI-adjacent role — `gallodave.cs@gmail.com`
-
-**Voice card:** direct, plain, blunt, no buzzwords, show the work
-
----
-
-## Sitemap sketch (text version)
-
-Four pages. Nothing else.
-
-```
-[ Home / Hero ]
-      |
-      | claim + who it's for + primary CTA (email)
-      v
-[ Work ]
-      |
-      | ACRA case (problem → decisions → outcome)
-      | (more cases only when they earn a slot)
-      v
-[ About ]
-      |
-      | short bio, OLFU, FlyRank, how I work with AI
-      v
-[ Contact ]
-      |
-      | email CTA only — same one action
-```
-
-| Page | Earns its place because… |
+| Piece | Value |
 |---|---|
-| **Home** | States the claim in one breath and points at the email action. |
-| **Work** | Only proof that the claim is real (starts with ACRA). |
-| **About** | Makes you a specific person, not a template. |
-| **Contact** | One action: email about a junior backend / AI-adjacent role. |
-
-**Explicitly not on the map:** blog, services menu, fake “testimonials,” extra project pages with no case, separate “AI tools” page.
-
-### Sitemap diagram
-
-![Portfolio sitemap — Home → Work → About → Contact](./assets/sitemap-diagram.png)
-
-*Optional: add a hand-drawn paper photo under `work/week-1/assets/` if the grader wants one.*
+| **Claim** | I ship backend services that put AI behind real checks: ownership is explicit, evals catch failure modes, and I only claim what a run can prove. |
+| **Person** | A backend engineering manager hiring for AI-featured products |
+| **Action** | Email me about a junior backend / AI-adjacent role — `gallodave.cs@gmail.com` |
+| **Voice** | direct, plain, blunt, no buzzwords, show the work |
 
 ---
 
-## Free toolkit checklist
+## 1. Sitemap sketch
+
+![Portfolio sitemap diagram](./assets/sitemap-diagram.png)
+
+**Pages (before pressure-test):** Home → Work → About → Contact
+
+| Page | Why it earns a place |
+|---|---|
+| **Home** | States the claim + primary email CTA |
+| **Work** | Proof (ACRA) |
+| **About** | Specific person, not a template |
+| **Contact** | One action (email) |
+
+**Explicitly not on the map:** blog, services menu, filler project pages.
+
+---
+
+## 2. Free toolkit
 
 | Tool | Status |
 |---|---|
-| Claude | active (per FL-01) |
-| ChatGPT | active (per FL-01) |
-| Gemini | *confirm / create* |
-| Perplexity | *confirm / create* |
+| Claude | Active — Project configured (screenshots below) |
+| ChatGPT | Active (per FL-01) |
+| Gemini | Confirm before final grade if required |
+| Perplexity | Confirm before final grade if required |
 
 ---
 
-## Claude Project setup
+## 3. Claude Project
 
-**Suggested name:** `FlyRank Portfolio — Dave Gallo` (8 weeks)
+**Name:** Portfolio — Dave Gallo
 
-**Standing instructions to paste:**
+**Custom instructions (pasted):**
 
 > You are my tutor for an 8-week FlyRank Backend AI Engineer / AI Fluency build. Be direct, plain, blunt, no buzzwords. Show the work. Push back when I skip verification or overclaim.
 >
-> **Proof statement:** I ship backend services that put AI behind real checks: ownership is explicit, evals catch failure modes, and I only claim what a run can prove. This is for a backend engineering manager hiring for AI-featured products — if that standard shows up in the work, email me about a junior backend / AI-adjacent role.
+> Proof statement: I ship backend services that put AI behind real checks: ownership is explicit, evals catch failure modes, and I only claim what a run can prove. This is for a backend engineering manager hiring for AI-featured products — if that standard shows up in the work, email me about a junior backend / AI-adjacent role.
 >
-> **Voice:** direct, plain, blunt, no buzzwords, show the work.
+> Voice: direct, plain, blunt, no buzzwords, show the work.
 >
 > Never invent numbers. If I haven't given data, say so and tell me what to run.
 
-### Claude Project screenshot
+### Screenshot — Project + instructions + pressure-test prompt
 
 ![Claude Project with custom instructions and pressure-test prompt](./assets/claude-project-pressure-test.png)
 
-Project name: **Portfolio — Dave Gallo**. Instructions sidebar shows tutor + proof statement. Pressure-test prompt + sitemap diagram attached in-chat.
-
 ---
 
-## Pressure-test (claim + action vs sitemap)
+## 4. Pressure-test prompt + output
 
-**Prompt used:**
+**Prompt:**
 
-> Pressure-test this 4-page portfolio sitemap (Home, Work, About, Contact) against my claim and one action.
-> Claim: I ship backend services that put AI behind real checks…
-> Action: email me about a junior backend / AI-adjacent role.
-> Work page currently features ACRA (color-accessibility re-encoding; I owned pipeline re-encoding + frontend). Is every page necessary? What should I change?
+> Pressure-test this 4-page portfolio sitemap against my claim and one action.
+> Sitemap: Home (claim + email CTA) → Work (ACRA case) → About (short bio) → Contact (one email action). Nothing else.
+> Claim / action / audience as locked above.
+> Is every page necessary? What should I change? Give at least one concrete change.
 
-**Tutor pressure-test output:**
-
-The map is the right *size*. Four pages is enough to go claim → proof → person → email. Cuts are good: no blog, no filler.
-
-**What earns its place**
-- Home: yes, if the hero is the claim + the email CTA — not a soft “welcome to my portfolio.”
-- Work: yes, but only if ACRA is framed as backend/AI judgment (evals, exclude-person decision, locked pass bars), not as a pretty demo. A hiring manager for backend/AI roles will bounce if Work reads like a UI gallery.
-- About: yes, short. Tie FlyRank + OLFU to how you decide what AI owns vs what you own.
-- Contact: yes — one mailto / form aimed at that exact action.
-
-**What to change (at least one)**
-1. On Home, lead with the claim in your voice, then a single button: “Email me about a junior backend / AI role.” Don’t bury the action under icons.
-2. On Work, title the ACRA case so the backend/AI check is obvious in the first line (e.g. “ACRA — re-encoding with explicit ownership + locked metrics”), not just “color accessibility app.”
-3. Don’t add a fifth page until a second case can survive the same three-beat test as ACRA.
-
-**One change I’ll make (from Claude’s pressure-test):** Rename Work to **Work — ACRA backend** and lead with ownership + evals (what I own, the checks, what evals caught) — not a thesis-style color-accessibility write-up. Also fold Contact into Home/Work CTAs instead of a standalone page if it doesn’t earn its own URL.
-
-### Pressure-test screenshots
-
-![Prompt + Project instructions](./assets/claude-project-pressure-test.png)
+### Screenshot — Claude output
 
 ![Claude pressure-test output](./assets/claude-pressure-test-output.png)
 
-Claude pushed: cut standalone Contact; make Work carry the backend/AI proof (evals, ownership); don’t let ACRA read like only a school color project.
+### One change I’ll make
+
+Rename **Work → Work — ACRA backend** and lead with ownership + evals (what I own, the checks, what evals caught) — not a thesis-style color write-up. Fold Contact into Home/Work CTAs if a standalone Contact page doesn’t earn its own URL.
 
 ---
 
 ## Pass checklist
 
 - [x] Small sitemap; every page argued against claim + action
-- [ ] Claude / ChatGPT / Gemini / Perplexity accounts confirmed
-- [x] Claude Project created with proof statement + tutor instructions (screenshot)
-- [x] Pressure-test run; at least one change noted
-- [ ] Photo of hand-drawn sitemap sketch
+- [x] Claude Project with proof statement + tutor instructions (screenshot)
+- [x] Pressure-test run; at least one change noted (screenshot)
+- [x] Sitemap diagram included
+- [ ] Gemini + Perplexity accounts confirmed (if grader requires all four)
