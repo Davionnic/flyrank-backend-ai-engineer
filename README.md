@@ -6,9 +6,13 @@ AI Fluency track work for **Dave Andrei Almia Gallo** — CS undergrad (OLFU) ·
 
 ```
 work/
-  ai-fluency/     # FL-01 → FL-04 and related writeups
+  ai-fluency/
+    FL-01-workflow-audit.md
 ```
 
 ## Status
 
-Repo scaffolded. FL-01 workflow audit coming next.
+- [x] FL-01 — AI Workflow Audit
+- [ ] FL-02
+- [ ] FL-03
+- [ ] FL-04
