@@ -6,15 +6,12 @@ AI Fluency track work for **Dave Andrei Almia Gallo** — CS undergrad (OLFU) ·
 
 ```
 work/
-  ai-fluency/
+  week-1/
     FL-01-workflow-audit.md
     proof-statement-brief.md
 ```
 
-## Status
+## Week 1
 
-- [x] FL-01 — AI Workflow Audit
-- [ ] Proof statement (brief saved; draft pending)
-- [ ] FL-02
-- [ ] FL-03
-- [ ] FL-04
+- [x] [FL-01 — AI Workflow Audit](work/week-1/FL-01-workflow-audit.md)
+- [x] [Proof statement brief](work/week-1/proof-statement-brief.md) (deliverable draft pending)
