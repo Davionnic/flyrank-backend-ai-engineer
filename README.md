@@ -12,6 +12,7 @@ work/
     proof-statement.md
   week-2/
     voice-card-case-studies-brief.md
+    voice-card-case-studies.md
 ```
 
 ## Week 1
@@ -21,4 +22,4 @@ work/
 
 ## Week 2
 
-- [ ] [Voice card & case studies](work/week-2/voice-card-case-studies-brief.md) (in progress)
+- [x] [Voice card & case studies](work/week-2/voice-card-case-studies.md)
