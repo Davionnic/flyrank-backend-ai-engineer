@@ -113,11 +113,15 @@ The map is the right *size*. Four pages is enough to go claim → proof → pers
 2. On Work, title the ACRA case so the backend/AI check is obvious in the first line (e.g. “ACRA — re-encoding with explicit ownership + locked metrics”), not just “color accessibility app.”
 3. Don’t add a fifth page until a second case can survive the same three-beat test as ACRA.
 
-**One change I’ll make:** Work case titles lead with the backend/AI proof, not the product category.
+**One change I’ll make (from Claude’s pressure-test):** Rename Work to **Work — ACRA backend** and lead with ownership + evals (what I own, the checks, what evals caught) — not a thesis-style color-accessibility write-up. Also fold Contact into Home/Work CTAs instead of a standalone page if it doesn’t earn its own URL.
 
-### Pressure-test screenshot
+### Pressure-test screenshots
 
-*Pending — screenshot of Claude Project prompt + this output (or paste Claude’s own reply here after you run it).*
+![Prompt + Project instructions](./assets/claude-project-pressure-test.png)
+
+![Claude pressure-test output](./assets/claude-pressure-test-output.png)
+
+Claude pushed: cut standalone Contact; make Work carry the backend/AI proof (evals, ownership); don’t let ACRA read like only a school color project.
 
 ---
 
