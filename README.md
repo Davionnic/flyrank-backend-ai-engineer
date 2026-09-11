@@ -10,10 +10,11 @@ work/
     FL-01-workflow-audit.md
     proof-statement-brief.md
     proof-statement.md
+    voice-card-case-studies-brief.md
 ```
 
 ## Week 1
 
 - [x] [FL-01 — AI Workflow Audit](work/week-1/FL-01-workflow-audit.md)
-- [x] [Proof statement brief](work/week-1/proof-statement-brief.md)
 - [x] [Proof statement](work/week-1/proof-statement.md)
+- [ ] [Voice card & case studies](work/week-1/voice-card-case-studies-brief.md) (in progress)
