@@ -83,7 +83,9 @@ Four pages. Nothing else.
 
 ### Claude Project screenshot
 
-*Pending — screenshot of configured Project + custom instructions.*
+![Claude Project with custom instructions and pressure-test prompt](./assets/claude-project-pressure-test.png)
+
+Project name: **Portfolio — Dave Gallo**. Instructions sidebar shows tutor + proof statement. Pressure-test prompt + sitemap diagram attached in-chat.
 
 ---
 
@@ -123,6 +125,6 @@ The map is the right *size*. Four pages is enough to go claim → proof → pers
 
 - [x] Small sitemap; every page argued against claim + action
 - [ ] Claude / ChatGPT / Gemini / Perplexity accounts confirmed
-- [ ] Claude Project created with proof statement + tutor instructions (screenshot)
+- [x] Claude Project created with proof statement + tutor instructions (screenshot)
 - [x] Pressure-test run; at least one change noted
 - [ ] Photo of hand-drawn sitemap sketch
