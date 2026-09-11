@@ -6,8 +6,9 @@ AI Fluency track work for **Dave Andrei Almia Gallo** — CS undergrad (OLFU) ·
 
 - [x] [FL-01 — AI Workflow Audit](work/week-1/FL-01-workflow-audit.md)
 - [x] [Proof statement](work/week-1/proof-statement.md)
-- [x] [Sitemap & toolkit — submit this](work/week-1/sitemap-toolkit/)
+- [x] [Sitemap & toolkit](work/week-1/sitemap-toolkit.md)
 
 ## Week 2
 
 - [x] [Voice card & case studies](work/week-2/voice-card-case-studies.md)
+- [x] [Prompt ladder](work/week-2/prompt-ladder.md)
