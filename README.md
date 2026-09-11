@@ -10,6 +10,8 @@ work/
     FL-01-workflow-audit.md
     proof-statement-brief.md
     proof-statement.md
+    sitemap-toolkit-brief.md
+    sitemap-toolkit.md
   week-2/
     voice-card-case-studies-brief.md
     voice-card-case-studies.md
@@ -19,6 +21,7 @@ work/
 
 - [x] [FL-01 — AI Workflow Audit](work/week-1/FL-01-workflow-audit.md)
 - [x] [Proof statement](work/week-1/proof-statement.md)
+- [ ] [Sitemap & toolkit](work/week-1/sitemap-toolkit.md) (sketch + pressure-test drafted; photos/screenshots pending)
 
 ## Week 2
 
