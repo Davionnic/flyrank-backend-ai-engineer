@@ -12,6 +12,7 @@ AI Fluency track work for **Dave Andrei Almia Gallo** — CS undergrad (OLFU) ·
 
 - [x] [Voice card & case studies](work/week-2/voice-card-case-studies.md)
 - [x] [Prompt ladder](work/week-2/prompt-ladder.md)
+- [x] [FL-02 Prompting Fundamentals](work/week-2/FL-02-prompting-fundamentals.md)
 
 ## AI Fluency Capstone
 
