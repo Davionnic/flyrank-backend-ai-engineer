@@ -48,9 +48,11 @@ Four pages. Nothing else.
 
 **Explicitly not on the map:** blog, services menu, fake “testimonials,” extra project pages with no case, separate “AI tools” page.
 
-### Hand-drawn photo
+### Sitemap diagram
 
-*Pending — add photo of paper/whiteboard sketch here or attach under `work/week-1/assets/`.*
+![Portfolio sitemap — Home → Work → About → Contact](./assets/sitemap-diagram.png)
+
+*Optional: add a hand-drawn paper photo under `work/week-1/assets/` if the grader wants one.*
 
 ---
 
