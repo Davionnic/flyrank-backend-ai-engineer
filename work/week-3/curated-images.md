@@ -15,7 +15,7 @@
 | Sitemap / structure diagram | Real process capture | [sitemap-diagram.png](./assets/sitemap-diagram.png) |
 | Claude Project / pressure-test proof | Real screenshot | [claude-project-pressure-test.png](./assets/claude-project-pressure-test.png) |
 | Claude judgment output | Real screenshot | [claude-pressure-test-output.png](./assets/claude-pressure-test-output.png) |
-| ACRA product UI / results | **Real capture** (not AI stand-in) | See gather list / capture |
+| ACRA product UI / landing | **Real capture** (not AI stand-in) | [acra-landing.png](./assets/acra-landing.png) |
 | Task API `/docs` Swagger | **Real capture** | Need from local run |
 | About — me | **Real photo only** | Still need to gather (no AI face) |
 
@@ -32,6 +32,9 @@ Muted navy/teal node grid on near-white — matches identity kit; stays behind t
 ![DG logo](./assets/dg-logo.png)
 
 ### Real process captures
+
+![ACRA landing](./assets/acra-landing.png)
+
 ![Sitemap](./assets/sitemap-diagram.png)
 
 ![Claude Project](./assets/claude-project-pressure-test.png)
