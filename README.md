@@ -1,6 +1,6 @@
 # FlyRank Backend AI Engineer
 
-AI Fluency track work for **Dave Andrei Almia Gallo** — CS undergrad (OLFU) · Backend AI Engineer @ FlyRank.
+AI Fluency + Backend track work for **Dave Andrei Almia Gallo** — CS undergrad (OLFU) · Backend AI Engineer @ FlyRank.
 
 ## Week 1
 
@@ -14,6 +14,18 @@ AI Fluency track work for **Dave Andrei Almia Gallo** — CS undergrad (OLFU) ·
 - [x] [Prompt ladder](work/week-2/prompt-ladder.md)
 - [x] [FL-02 Prompting Fundamentals](work/week-2/FL-02-prompting-fundamentals.md)
 
+## Week 3 (AI Fluency)
+
+- [x] [Consistency / Frame pack](work/week-3/consistency-frame.md)
+- [x] [Through-line map](work/week-3/through-line.md)
+- [x] [Identity kit](work/week-3/identity-kit.md)
+- [x] [Curated images](work/week-3/curated-images.md)
+
 ## AI Fluency Capstone
 
 - [x] [Next case habit (fl-cap)](work/ai-fluency-capstone/next-case.md)
+
+## Backend projects (not Week 3 Fluency)
+
+- [x] [W2 Task CRUD API](https://github.com/Davionnic/w2-task-crud-api)
+- [ ] BE-02 database / BE-04 Docker — pending
