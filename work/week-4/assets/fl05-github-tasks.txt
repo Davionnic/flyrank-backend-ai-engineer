@@ -1,0 +1,18 @@
+FL-05 MCP/GitHub connector evidence — live tool tasks
+Connector: user-Github MCP [connected] · 45 tools · plugin 48677658
+Also verified via gh CLI authenticated as Davionnic
+
+=== TASK 1: list live public repos (chat alone cannot see private API state) ===
+Davionnic/flyrank-backend-ai-engineer
+Davionnic/painter-motion-lab
+Davionnic/w2-task-crud-api
+
+=== TASK 2: read live file metadata from flyrank-backend-ai-engineer ===
+{"html_url":"https://github.com/Davionnic/flyrank-backend-ai-engineer/blob/main/work/week-3/through-line.md","sha":"f3c474571db409d692aac23f209fdba6bf152011","size":3052}
+
+=== TASK 3: latest commits on w2-task-crud-api ===
+{"message":"Final testing and verification\n\nCo-authored-by: Davionnic \u003cDavionnic@users.noreply.github.com\u003e","sha":"c7315e6"}
+{"message":"Stage 7: AI vs me\n\nCo-authored-by: Davionnic \u003cDavionnic@users.noreply.github.com\u003e","sha":"e5ffb9a"}
+{"message":"Stage 6: publish and docs\n\nCo-authored-by: Davionnic \u003cDavionnic@users.noreply.github.com\u003e","sha":"a5547df"}
+{"message":"Stage 5: Swagger UI\n\nCo-authored-by: Davionnic \u003cDavionnic@users.noreply.github.com\u003e","sha":"5ff7089"}
+{"message":"Stage 4: full CRUD\n\nCo-authored-by: Davionnic \u003cDavionnic@users.noreply.github.com\u003e","sha":"64b1b15"}
