@@ -48,6 +48,8 @@ I already have the **GitHub MCP connector** installed and connected in this envi
 
 ![FL-05 live GitHub tool outputs](./assets/fl05-task-outputs.png)
 
+![Live GitHub repos page](./assets/fl05-github-repos.png)
+
 Raw log: [fl05-github-tasks.txt](./assets/fl05-github-tasks.txt)
 
 ---
