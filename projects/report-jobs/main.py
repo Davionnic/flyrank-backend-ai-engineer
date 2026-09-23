@@ -1,6 +1,7 @@
-"""FlyRank BE-06 — Stage 3: retries on fail topic + 400 validation."""
+"""FlyRank BE-06 — Stage 4: cron heartbeat + full report API."""
 from __future__ import annotations
 
+import logging
 import uuid
 from typing import Any
 
@@ -9,7 +10,10 @@ import inngest.fast_api
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-app = FastAPI(title="Report Jobs API", version="0.3.0")
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger("report-api")
+
+app = FastAPI(title="Report Jobs API", version="0.4.0")
 inngest_client = inngest.Inngest(app_id="report-api")
 
 REPORTS: dict[str, dict[str, Any]] = {}
@@ -28,7 +32,7 @@ def health():
 async def create_report(body: ReportCreate):
     topic = (body.topic or "").strip()
     if not topic:
-        # Validation errors must NOT enqueue a job (nothing to retry).
+        # Bad input is the caller's fault — do not enqueue; retries would not help.
         raise HTTPException(status_code=400, detail="topic is required")
 
     report_id = str(uuid.uuid4())
@@ -59,7 +63,7 @@ async def say_hello(ctx: inngest.Context, step: inngest.Step):
 @inngest_client.create_function(
     fn_id="make-report",
     trigger=inngest.TriggerEvent(event="report/requested"),
-    retries=2,  # 1 initial + 2 retries = 3 attempts
+    retries=2,
 )
 async def make_report(ctx: inngest.Context, step: inngest.Step):
     report_id = ctx.event.data["id"]
@@ -86,4 +90,29 @@ async def make_report(ctx: inngest.Context, step: inngest.Step):
     return await step.run("build-report", build)
 
 
-inngest.fast_api.serve(app, inngest_client, [say_hello, make_report])
+@inngest_client.create_function(
+    fn_id="heartbeat",
+    trigger=inngest.TriggerCron(cron="* * * * *"),
+)
+async def heartbeat(ctx: inngest.Context, step: inngest.Step):
+    def summarize() -> dict[str, int]:
+        counts = {"pending": 0, "done": 0, "failed": 0, "other": 0}
+        for r in REPORTS.values():
+            status = r.get("status", "other")
+            if status in counts:
+                counts[status] += 1
+            else:
+                counts["other"] += 1
+        log.info(
+            "heartbeat pending=%s done=%s failed=%s total=%s",
+            counts["pending"],
+            counts["done"],
+            counts["failed"],
+            len(REPORTS),
+        )
+        return counts
+
+    return await step.run("count-reports", summarize)
+
+
+inngest.fast_api.serve(app, inngest_client, [say_hello, make_report, heartbeat])
