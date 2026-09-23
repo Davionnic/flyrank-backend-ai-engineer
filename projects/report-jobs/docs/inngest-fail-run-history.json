@@ -1,0 +1,132 @@
+{
+    "data": {
+        "functionRun": {
+            "id": "01M3780MCJDK7AWZ2ZAQYRFABW",
+            "status": "FAILED",
+            "startedAt": "2026-09-23T13:41:51.122Z",
+            "finishedAt": "2026-09-23T13:43:32.854413149Z",
+            "output": "{\"code\":\"step_errored\",\"message\":\"The report oven is broken!\",\"name\":\"RuntimeError\",\"stack\":\"Traceback (most recent call last):\\n  File \\\"/workspace/flyrank-backend-ai-engineer/projects/report-jobs/main.py\\\", line 84, in build\\n    raise RuntimeError(\\\"The report oven is broken!\\\")\\nRuntimeError: The report oven is broken!\\n\"}",
+            "history": [
+                {
+                    "id": "01M3780MCMFQT4T2GN3W9MZ2A4",
+                    "type": "FunctionScheduled",
+                    "createdAt": "2026-09-23T13:41:51.124Z",
+                    "stepName": null,
+                    "attempt": 0
+                },
+                {
+                    "id": "01M3780MDF6EZRG8X4H7H60W3J",
+                    "type": "FunctionStarted",
+                    "createdAt": "2026-09-23T13:41:51.151Z",
+                    "stepName": null,
+                    "attempt": 0
+                },
+                {
+                    "id": "01M3780MDF6MSCA8TXM61ZP5W3",
+                    "type": "StepStarted",
+                    "createdAt": "2026-09-23T13:41:51.151Z",
+                    "stepName": "step",
+                    "attempt": 0
+                },
+                {
+                    "id": "01M3780MDKJ9G24FGTXJX4Y1WR",
+                    "type": "StepCompleted",
+                    "createdAt": "2026-09-23T13:41:51.155Z",
+                    "stepName": "step",
+                    "attempt": 0
+                },
+                {
+                    "id": "01M3780MDMD6JT4ZZJ58KJE0QR",
+                    "type": "StepSleeping",
+                    "createdAt": "2026-09-23T13:41:51.156Z",
+                    "stepName": "think",
+                    "attempt": 0
+                },
+                {
+                    "id": "01M3780W7NEXQVDDV3Y4YV1203",
+                    "type": "StepStarted",
+                    "createdAt": "2026-09-23T13:41:59.157Z",
+                    "stepName": "step",
+                    "attempt": 0
+                },
+                {
+                    "id": "01M3780W7SSTM26T4Q81EZASZB",
+                    "type": "StepErrored",
+                    "createdAt": "2026-09-23T13:41:59.161Z",
+                    "stepName": "build-report",
+                    "attempt": 0
+                },
+                {
+                    "id": "01M3780W7VQX333Y0PER19KEKD",
+                    "type": "StepScheduled",
+                    "createdAt": "2026-09-23T13:41:59.163Z",
+                    "stepName": "build-report",
+                    "attempt": 1
+                },
+                {
+                    "id": "01M3781XDY911YAH0Z5XX6CP62",
+                    "type": "StepStarted",
+                    "createdAt": "2026-09-23T13:42:33.15Z",
+                    "stepName": "step",
+                    "attempt": 1
+                },
+                {
+                    "id": "01M3781XE35MZ688M5KD2WPE46",
+                    "type": "StepErrored",
+                    "createdAt": "2026-09-23T13:42:33.155Z",
+                    "stepName": "build-report",
+                    "attempt": 1
+                },
+                {
+                    "id": "01M3781XE3YVGDJ75SGFCBYD6M",
+                    "type": "StepScheduled",
+                    "createdAt": "2026-09-23T13:42:33.155Z",
+                    "stepName": "build-report",
+                    "attempt": 2
+                },
+                {
+                    "id": "01M3783QJMDV81J26PS60PSTQ1",
+                    "type": "StepStarted",
+                    "createdAt": "2026-09-23T13:43:32.692Z",
+                    "stepName": "step",
+                    "attempt": 2
+                },
+                {
+                    "id": "01M3783QJSWVVV73R20DZSHVMR",
+                    "type": "StepCompleted",
+                    "createdAt": "2026-09-23T13:43:32.697Z",
+                    "stepName": "step",
+                    "attempt": 2
+                },
+                {
+                    "id": "01M3783QJWE8HKX1QE3PZ4XMST",
+                    "type": "StepScheduled",
+                    "createdAt": "2026-09-23T13:43:32.7Z",
+                    "stepName": null,
+                    "attempt": 0
+                },
+                {
+                    "id": "01M3783QQH24FC6HJ1QFFK21Z1",
+                    "type": "StepStarted",
+                    "createdAt": "2026-09-23T13:43:32.849Z",
+                    "stepName": "step",
+                    "attempt": 0
+                },
+                {
+                    "id": "01M3783QQM2HPWXXK8NFDSWTQR",
+                    "type": "StepFailed",
+                    "createdAt": "2026-09-23T13:43:32.852Z",
+                    "stepName": "step",
+                    "attempt": 0
+                },
+                {
+                    "id": "01M3783QQP4YKZB81GZ78310DY",
+                    "type": "FunctionFailed",
+                    "createdAt": "2026-09-23T13:43:32.854Z",
+                    "stepName": null,
+                    "attempt": 0
+                }
+            ]
+        }
+    }
+}

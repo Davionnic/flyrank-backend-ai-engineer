@@ -4,12 +4,13 @@ from __future__ import annotations
 import logging
 import os
 import uuid
+from datetime import timedelta
 from typing import Any
 
 import inngest
 import inngest.fast_api
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 # Local Dev Server: no cloud signing key required.
 os.environ.setdefault("INNGEST_DEV", "1")
@@ -59,8 +60,9 @@ def get_report(report_id: str):
     fn_id="say-hello",
     trigger=inngest.TriggerEvent(event="test/hello"),
 )
-async def say_hello(ctx: inngest.Context, step: inngest.Step):
-    await step.sleep("wait-five", 5)
+async def say_hello(ctx: inngest.Context):
+    # Inngest Python SDK: int duration is milliseconds.
+    await ctx.step.sleep("wait-five", timedelta(seconds=5))
     return {"ok": True, "msg": "hello from report-api"}
 
 
@@ -69,11 +71,11 @@ async def say_hello(ctx: inngest.Context, step: inngest.Step):
     trigger=inngest.TriggerEvent(event="report/requested"),
     retries=2,
 )
-async def make_report(ctx: inngest.Context, step: inngest.Step):
+async def make_report(ctx: inngest.Context):
     report_id = ctx.event.data["id"]
     topic = ctx.event.data["topic"]
 
-    await step.sleep("think", 8)
+    await ctx.step.sleep("think", timedelta(seconds=8))
 
     def build() -> dict[str, Any]:
         if topic == "fail":
@@ -91,14 +93,14 @@ async def make_report(ctx: inngest.Context, step: inngest.Step):
             REPORTS[report_id]["result"] = result
         return result
 
-    return await step.run("build-report", build)
+    return await ctx.step.run("build-report", build)
 
 
 @inngest_client.create_function(
     fn_id="heartbeat",
     trigger=inngest.TriggerCron(cron="* * * * *"),
 )
-async def heartbeat(ctx: inngest.Context, step: inngest.Step):
+async def heartbeat(ctx: inngest.Context):
     def summarize() -> dict[str, int]:
         counts = {"pending": 0, "done": 0, "failed": 0}
         for r in REPORTS.values():
@@ -114,7 +116,7 @@ async def heartbeat(ctx: inngest.Context, step: inngest.Step):
         )
         return counts
 
-    return await step.run("count-reports", summarize)
+    return await ctx.step.run("count-reports", summarize)
 
 
 inngest.fast_api.serve(app, inngest_client, [say_hello, make_report, heartbeat])

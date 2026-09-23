@@ -1,0 +1,181 @@
+=== FlyRank BE-06 curl proof ===
+Date (Asia/Shanghai): 2026-09-23 21:41:40 CST
+Host: box local uvicorn :8000 + inngest-cli :8288
+INNGEST_DEV=1 / is_production=False
+Fix applied: Inngest py handlers take ctx only; use ctx.step; sleep via timedelta
+
+=== 1) GET /health ===
+$ curl -si http://localhost:8000/health
+HTTP/1.1 200 OK
+date: Wed, 23 Sep 2026 13:41:39 GMT
+server: uvicorn
+content-length: 15
+content-type: application/json
+
+{"status":"ok"}
+
+=== 2) POST /reports topic=cats (expect 202, fast) ===
+$ curl -si -X POST http://localhost:8000/reports -H "content-type: application/json" -d '{"topic":"cats"}'
+HTTP/1.1 202 Accepted
+date: Wed, 23 Sep 2026 13:41:39 GMT
+server: uvicorn
+content-length: 64
+content-type: application/json
+
+{"id":"91301b91-affb-44b9-8c33-e6add271edcb","status":"pending"}
+elapsed_ms=11
+parsed_id=91301b91-affb-44b9-8c33-e6add271edcb
+
+
+=== 3) Immediate poll (expect pending) ===
+$ curl -si http://localhost:8000/reports/91301b91-affb-44b9-8c33-e6add271edcb
+HTTP/1.1 200 OK
+date: Wed, 23 Sep 2026 13:41:39 GMT
+server: uvicorn
+content-length: 79
+content-type: application/json
+
+{"id":"91301b91-affb-44b9-8c33-e6add271edcb","topic":"cats","status":"pending"}
+
+=== 4) Poll until done ===
+poll#1 status=pending body={"id":"91301b91-affb-44b9-8c33-e6add271edcb","topic":"cats","status":"pending"}
+poll#2 status=pending body={"id":"91301b91-affb-44b9-8c33-e6add271edcb","topic":"cats","status":"pending"}
+poll#3 status=pending body={"id":"91301b91-affb-44b9-8c33-e6add271edcb","topic":"cats","status":"pending"}
+poll#4 status=pending body={"id":"91301b91-affb-44b9-8c33-e6add271edcb","topic":"cats","status":"pending"}
+poll#5 status=done body={"id":"91301b91-affb-44b9-8c33-e6add271edcb","topic":"cats","status":"done","result":{"headline":"Report on cats","summary":"Background job finished a slow write-up about cats.","bullets":["cats fact 1","cats fact 2","cats fact 3"]}}
+
+$ curl -si http://localhost:8000/reports/91301b91-affb-44b9-8c33-e6add271edcb  (final)
+HTTP/1.1 200 OK
+date: Wed, 23 Sep 2026 13:41:50 GMT
+server: uvicorn
+content-length: 233
+content-type: application/json
+
+{"id":"91301b91-affb-44b9-8c33-e6add271edcb","topic":"cats","status":"done","result":{"headline":"Report on cats","summary":"Background job finished a slow write-up about cats.","bullets":["cats fact 1","cats fact 2","cats fact 3"]}}
+
+=== 5) Empty topic → 400 ===
+$ curl -si -X POST http://localhost:8000/reports -H "content-type: application/json" -d '{"topic":""}'
+HTTP/1.1 400 Bad Request
+date: Wed, 23 Sep 2026 13:41:50 GMT
+server: uvicorn
+content-length: 30
+content-type: application/json
+
+{"detail":"topic is required"}
+
+=== 6) Missing topic field → 400 ===
+$ curl -si -X POST http://localhost:8000/reports -H "content-type: application/json" -d '{}'
+HTTP/1.1 400 Bad Request
+date: Wed, 23 Sep 2026 13:41:50 GMT
+server: uvicorn
+content-length: 30
+content-type: application/json
+
+{"detail":"topic is required"}
+
+=== 7) POST topic=fail (retries=2 → 3 attempts) ===
+$ curl -si -X POST http://localhost:8000/reports -H "content-type: application/json" -d '{"topic":"fail"}'
+HTTP/1.1 202 Accepted
+date: Wed, 23 Sep 2026 13:41:50 GMT
+server: uvicorn
+content-length: 64
+content-type: application/json
+
+{"id":"c09d8ba5-c485-4281-8255-329ee05b9b77","status":"pending"}
+parsed_fail_id=c09d8ba5-c485-4281-8255-329ee05b9b77
+
+Polling fail report (8s sleep × up to 3 attempts + backoff)...
+fail-poll#1 status=pending body={"id":"c09d8ba5-c485-4281-8255-329ee05b9b77","topic":"fail","status":"pending"}
+fail-poll#2 status=pending body={"id":"c09d8ba5-c485-4281-8255-329ee05b9b77","topic":"fail","status":"pending"}
+fail-poll#3 status=failed body={"id":"c09d8ba5-c485-4281-8255-329ee05b9b77","topic":"fail","status":"failed"}
+
+$ curl -si http://localhost:8000/reports/c09d8ba5-c485-4281-8255-329ee05b9b77  (final)
+HTTP/1.1 200 OK
+date: Wed, 23 Sep 2026 13:41:59 GMT
+server: uvicorn
+content-length: 78
+content-type: application/json
+
+{"id":"c09d8ba5-c485-4281-8255-329ee05b9b77","topic":"fail","status":"failed"}
+
+=== 8) 404 unknown id ===
+$ curl -si http://localhost:8000/reports/00000000-0000-0000-0000-000000000000
+HTTP/1.1 404 Not Found
+date: Wed, 23 Sep 2026 13:41:59 GMT
+server: uvicorn
+content-length: 29
+content-type: application/json
+
+{"detail":"Report not found"}
+
+=== End of curl proof ===
+CATS_ID=91301b91-affb-44b9-8c33-e6add271edcb
+FAIL_ID=c09d8ba5-c485-4281-8255-329ee05b9b77
+fail-poll#20 status=None body={"detail":"Report not found"}
+fail-poll#21 status=None body={"detail":"Report not found"}
+fail-poll#22 status=None body={"detail":"Report not found"}
+fail-poll#23 status=None body={"detail":"Report not found"}
+fail-poll#24 status=None body={"detail":"Report not found"}
+fail-poll#25 status=None body={"detail":"Report not found"}
+fail-poll#26 status=None body={"detail":"Report not found"}
+fail-poll#27 status=None body={"detail":"Report not found"}
+fail-poll#28 status=None body={"detail":"Report not found"}
+fail-poll#29 status=None body={"detail":"Report not found"}
+fail-poll#30 status=None body={"detail":"Report not found"}
+fail-poll#31 status=None body={"detail":"Report not found"}
+fail-poll#32 status=None body={"detail":"Report not found"}
+fail-poll#33 status=None body={"detail":"Report not found"}
+fail-poll#34 status=None body={"detail":"Report not found"}
+fail-poll#35 status=None body={"detail":"Report not found"}
+fail-poll#36 status=None body={"detail":"Report not found"}
+fail-poll#37 status=None body={"detail":"Report not found"}
+fail-poll#38 status=None body={"detail":"Report not found"}
+fail-poll#39 status=None body={"detail":"Report not found"}
+fail-poll#40 status=None body={"detail":"Report not found"}
+
+$ curl -si http://localhost:8000/reports/a31857dc-d9df-4932-83e8-cba647b217fa  (final)
+HTTP/1.1 404 Not Found
+date: Wed, 23 Sep 2026 13:42:43 GMT
+server: uvicorn
+content-length: 29
+content-type: application/json
+
+{"detail":"Report not found"}
+
+=== 8) 404 unknown id ===
+$ curl -si http://localhost:8000/reports/00000000-0000-0000-0000-000000000000
+HTTP/1.1 404 Not Found
+date: Wed, 23 Sep 2026 13:42:43 GMT
+server: uvicorn
+content-length: 29
+content-type: application/json
+
+{"detail":"Report not found"}
+
+=== End of curl proof ===
+CATS_ID=f9c912b2-d89d-4a34-970a-bd55dff60f12
+FAIL_ID=a31857dc-d9df-4932-83e8-cba647b217fa
+
+=== 9) Inngest Dev Server GraphQL — fail retries observed ===
+run_id=01M3780MCJDK7AWZ2ZAQYRFABW
+final_status=FAILED
+error=The report oven is broken!
+history attempts for build-report:
+  attempt 0: StepErrored @ 2026-09-23T13:41:59Z (UTC) / 21:41:59 CST
+  attempt 1: StepErrored @ 2026-09-23T13:42:33Z (UTC) / 21:42:33 CST
+  attempt 2: then FunctionFailed @ 2026-09-23T13:43:32Z (UTC) / 21:43:32 CST
+retries=2 → 3 attempts total — OBSERVED
+
+Dashboard URL: http://localhost:8288 (screenshot skipped — computerUse not available to executor; curl + GraphQL history used instead)
+
+=== 10) Uvicorn log excerpts (happy path + heartbeat) ===
+GraphQL dump saved: docs/inngest-fail-run-history.json
+run status=FAILED started=2026-09-23T13:41:51.122Z finished=2026-09-23T13:43:32.854413149Z
+build-report attempt numbers seen: [0, 1, 2]
+  2026-09-23T13:41:59.161Z type=StepErrored step=build-report attempt=0
+  2026-09-23T13:42:33.155Z type=StepErrored step=build-report attempt=1
+  2026-09-23T13:43:32.852Z type=StepFailed step=step attempt=0
+  2026-09-23T13:43:32.854Z type=FunctionFailed step=None attempt=0
+
+See also docs/inngest-runs.json for run list including completed cats + failed fail.
+Screenshot: not captured (no computerUse in this executor). Evidence = curl-proof + GraphQL history JSON.

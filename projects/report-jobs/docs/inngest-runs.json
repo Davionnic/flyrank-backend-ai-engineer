@@ -1,0 +1,108 @@
+{
+    "data": {
+        "runs": {
+            "totalCount": 9,
+            "edges": [
+                {
+                    "node": {
+                        "id": "01M3782QMTKS2XMBDDH18TTHNR",
+                        "status": "COMPLETED",
+                        "function": {
+                            "name": "heartbeat"
+                        },
+                        "queuedAt": "2026-09-23T13:42:59.996293628Z",
+                        "endedAt": "2026-09-23T13:43:00.304278337Z"
+                    }
+                },
+                {
+                    "node": {
+                        "id": "01M3780X1E0AKKW6DC6AMQDRJP",
+                        "status": "COMPLETED",
+                        "function": {
+                            "name": "heartbeat"
+                        },
+                        "queuedAt": "2026-09-23T13:41:59.983707135Z",
+                        "endedAt": "2026-09-23T13:42:00.153994856Z"
+                    }
+                },
+                {
+                    "node": {
+                        "id": "01M3780MCJDK7AWZ2ZAQYRFABW",
+                        "status": "FAILED",
+                        "function": {
+                            "name": "make-report"
+                        },
+                        "queuedAt": "2026-09-23T13:41:51.123253277Z",
+                        "endedAt": "2026-09-23T13:43:32.853042259Z"
+                    }
+                },
+                {
+                    "node": {
+                        "id": "01M3780ABCVC6Q0SH7RYN2XMEG",
+                        "status": "COMPLETED",
+                        "function": {
+                            "name": "make-report"
+                        },
+                        "queuedAt": "2026-09-23T13:41:40.845076244Z",
+                        "endedAt": "2026-09-23T13:41:49.054800827Z"
+                    }
+                },
+                {
+                    "node": {
+                        "id": "01M377ZQR0FS7HKX41SB1A20Y1",
+                        "status": "COMPLETED",
+                        "function": {
+                            "name": "make-report"
+                        },
+                        "queuedAt": "2026-09-23T13:41:21.793749087Z",
+                        "endedAt": "2026-09-23T13:41:30.002920314Z"
+                    }
+                },
+                {
+                    "node": {
+                        "id": "01M377Z2EHHVW0VPQ1NS45P1G2",
+                        "status": "COMPLETED",
+                        "function": {
+                            "name": "heartbeat"
+                        },
+                        "queuedAt": "2026-09-23T13:40:59.986471731Z",
+                        "endedAt": "2026-09-23T13:41:36.155208841Z"
+                    }
+                },
+                {
+                    "node": {
+                        "id": "01M377YHA722NKFMPXMR219Y5R",
+                        "status": "FAILED",
+                        "function": {
+                            "name": "make-report"
+                        },
+                        "queuedAt": "2026-09-23T13:40:42.440464179Z",
+                        "endedAt": "2026-09-23T13:43:02.553512133Z"
+                    }
+                },
+                {
+                    "node": {
+                        "id": "01M377X9NBWZEBFWEP2ZKZ5KQ9",
+                        "status": "COMPLETED",
+                        "function": {
+                            "name": "make-report"
+                        },
+                        "queuedAt": "2026-09-23T13:40:01.836682721Z",
+                        "endedAt": "2026-09-23T13:41:47.403945572Z"
+                    }
+                },
+                {
+                    "node": {
+                        "id": "01M377X7VXYA2B6C68ZB8WWAPQ",
+                        "status": "COMPLETED",
+                        "function": {
+                            "name": "heartbeat"
+                        },
+                        "queuedAt": "2026-09-23T13:39:59.999490538Z",
+                        "endedAt": "2026-09-23T13:41:25.204557075Z"
+                    }
+                }
+            ]
+        }
+    }
+}

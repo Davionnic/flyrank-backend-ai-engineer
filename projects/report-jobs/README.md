@@ -8,7 +8,7 @@ Monorepo path: `projects/report-jobs/` inside
 ## What it does
 
 - `POST /reports` returns **202 + id** immediately (fast door).
-- Inngest function `make-report` sleeps ~8s, then writes the result.
+- Inngest function `make-report` sleeps ~8s (`ctx.step.sleep` + `timedelta`), then writes the result.
 - `GET /reports/{id}` goes `pending` → `done` (or `failed`).
 - Topic `fail` retries twice (3 attempts total) then Failed.
 - Cron `heartbeat` every minute logs pending/done/failed counts.
@@ -97,3 +97,7 @@ Heartbeat here uses `* * * * *` (every minute) and logs store counts.
 ## Dashboard screenshot
 
 Run the Dev Server, trigger a report and a `fail` topic, then screenshot http://localhost:8288 showing `make-report` steps (sleep + run) and three attempts on fail. Save as `docs/inngest-dashboard.png` if attaching evidence.
+
+## SDK note (Python inngest ≥0.5)
+
+Handlers are `async def fn(ctx: inngest.Context)` — use `ctx.step`. Integer sleep durations are **milliseconds**; prefer `datetime.timedelta(seconds=…)`.
