@@ -1,0 +1,42 @@
+[
+  {
+    "id": "pos-product",
+    "text": "The new product update is excellent. Customers love the great performance and quality. Shipping was wonderful.",
+    "expect": {"sentiment": "positive", "tags_any": ["product", "quality", "shipping", "performance", "customer"]}
+  },
+  {
+    "id": "neg-support",
+    "text": "Terrible support experience. The service failed badly and the bug made everything awful. Worst week ever.",
+    "expect": {"sentiment": "negative", "tags_any": ["support", "service", "bug"]}
+  },
+  {
+    "id": "neu-price",
+    "text": "The price list was published today. Feature flags and privacy policy notes are attached for review.",
+    "expect": {"sentiment": "neutral", "tags_any": ["price", "feature", "privacy", "review"]}
+  },
+  {
+    "id": "pos-security",
+    "text": "Great news: security and reliability improvements landed. Users are happy with the best update yet.",
+    "expect": {"sentiment": "positive", "tags_any": ["security", "reliability", "update"]}
+  },
+  {
+    "id": "neg-shipping",
+    "text": "Shipping is broken again. Angry customers hate the delayed feedback loop. Bad operational failure.",
+    "expect": {"sentiment": "negative", "tags_any": ["shipping", "customer", "feedback"]}
+  },
+  {
+    "id": "mixed-ish",
+    "text": "Quality is good but the bug report process is sad. Overall a neutral-ish product note for the team.",
+    "expect": {"sentiment_in": ["positive", "negative", "neutral"], "tags_any": ["quality", "bug", "product"]}
+  },
+  {
+    "id": "fallback-obscure",
+    "text": "Zorblax quorin meep. Completely invented words with no sentiment cues.",
+    "expect": {"sentiment": "neutral", "tags_min": 1}
+  },
+  {
+    "id": "long-positive",
+    "text": "Amazing launch day. Excellent reviews poured in. Love the delightful UX and wonderful support team. Success!",
+    "expect": {"sentiment": "positive", "tags_any": ["review", "support"]}
+  }
+]

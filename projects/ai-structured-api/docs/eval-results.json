@@ -1,0 +1,130 @@
+{
+  "fixtures": 8,
+  "schema_valid": 8,
+  "soft_match": 8,
+  "score": 100.0,
+  "details": [
+    {
+      "id": "pos-product",
+      "pass": true,
+      "reasons": [],
+      "result": {
+        "summary": "The new product update is excellent.",
+        "tags": [
+          "product",
+          "customer",
+          "shipping",
+          "quality",
+          "performance",
+          "update"
+        ],
+        "sentiment": "positive",
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "neg-support",
+      "pass": true,
+      "reasons": [],
+      "result": {
+        "summary": "Terrible support experience.",
+        "tags": [
+          "support",
+          "bug",
+          "service"
+        ],
+        "sentiment": "negative",
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "neu-price",
+      "pass": true,
+      "reasons": [],
+      "result": {
+        "summary": "The price list was published today.",
+        "tags": [
+          "price",
+          "privacy",
+          "feature",
+          "review"
+        ],
+        "sentiment": "neutral",
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "pos-security",
+      "pass": true,
+      "reasons": [],
+      "result": {
+        "summary": "Great news: security and reliability improvements landed.",
+        "tags": [
+          "reliability",
+          "security",
+          "update"
+        ],
+        "sentiment": "positive",
+        "confidence": 0.84
+      }
+    },
+    {
+      "id": "neg-shipping",
+      "pass": true,
+      "reasons": [],
+      "result": {
+        "summary": "Shipping is broken again.",
+        "tags": [
+          "customer",
+          "shipping",
+          "feedback"
+        ],
+        "sentiment": "negative",
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "mixed-ish",
+      "pass": true,
+      "reasons": [],
+      "result": {
+        "summary": "Quality is good but the bug report process is sad.",
+        "tags": [
+          "product",
+          "quality",
+          "bug"
+        ],
+        "sentiment": "neutral",
+        "confidence": 0.76
+      }
+    },
+    {
+      "id": "fallback-obscure",
+      "pass": true,
+      "reasons": [],
+      "result": {
+        "summary": "Zorblax quorin meep.",
+        "tags": [
+          "topic-133a58",
+          "general"
+        ],
+        "sentiment": "neutral",
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "long-positive",
+      "pass": true,
+      "reasons": [],
+      "result": {
+        "summary": "Amazing launch day.",
+        "tags": [
+          "support",
+          "review"
+        ],
+        "sentiment": "positive",
+        "confidence": 0.95
+      }
+    }
+  ]
+}
