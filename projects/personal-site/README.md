@@ -20,7 +20,7 @@ Static portfolio for **Dave Andrei Almia Gallo**.
 
 - Email / booking: [gallodave.cs@gmail.com](mailto:gallodave.cs@gmail.com?subject=Junior%20backend%20/%20AI-adjacent%20role)
 - GitHub: https://github.com/Davionnic
-- LinkedIn: **TBD** — no confirmed public profile URL found at ship time. Site uses a [LinkedIn search link](https://www.linkedin.com/search/results/all/?keywords=Dave%20Andrei%20Almia%20Gallo). Update when a real profile URL exists.
+- LinkedIn: [https://www.linkedin.com/in/dave-andrei-gallo-396233414/](https://www.linkedin.com/in/dave-andrei-gallo-396233414/)
 
 ## Analytics
 
