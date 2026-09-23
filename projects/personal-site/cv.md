@@ -2,7 +2,7 @@
 
 **Email:** [gallodave.cs@gmail.com](mailto:gallodave.cs@gmail.com)  
 **GitHub:** [github.com/Davionnic](https://github.com/Davionnic)  
-**LinkedIn:** TBD (no confirmed public profile URL at ship time) — [search](https://www.linkedin.com/in/dave-andrei-gallo-396233414/)  
+**LinkedIn:** [https://www.linkedin.com/in/dave-andrei-gallo-396233414/](https://www.linkedin.com/in/dave-andrei-gallo-396233414/)  
 **Site:** https://davionnic.github.io/flyrank-backend-ai-engineer/
 
 ## Summary
