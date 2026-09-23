@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About / Contact — Dave Andrei Almia Gallo</title>
+  <meta name="description" content="About Dave Andrei Almia Gallo. Contact via mailto form or email gallodave.cs@gmail.com." />
+  <meta property="og:title" content="About / Contact — Dave Andrei Almia Gallo" />
+  <meta property="og:description" content="CS undergrad OLFU. Backend AI Engineer FlyRank. Email about junior backend / AI-adjacent roles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://davionnic.github.io/flyrank-backend-ai-engineer/about.html" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Analytics: pending -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Dave Gallo</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html" aria-current="page">About / Contact</a></li>
+        <li><a href="cv.md">CV</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>About</h1>
+    <p class="lead">
+      CS undergraduate at Our Lady of Fatima University (OLFU).
+      Backend AI Engineer in the FlyRank internship track.
+      I care about ownership, evals, and not overselling a model call as a product.
+    </p>
+
+    <ul class="list-plain">
+      <li><strong>Email:</strong> <a href="mailto:gallodave.cs@gmail.com">gallodave.cs@gmail.com</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/Davionnic" rel="noopener noreferrer" target="_blank">github.com/Davionnic</a></li>
+      <li><strong>LinkedIn:</strong> no confirmed public profile URL found at ship time —
+        <a href="https://www.linkedin.com/search/results/all/?keywords=Dave%20Andrei%20Almia%20Gallo" rel="noopener noreferrer" target="_blank">search LinkedIn</a>
+        (TBD — see README).</li>
+      <li><strong>CV:</strong> <a href="cv.md">cv.md</a></li>
+      <li><strong>Verify FlyRank:</strong> <a href="https://internship.flyrank.ai/verify" rel="noopener noreferrer" target="_blank">internship.flyrank.ai/verify</a></li>
+    </ul>
+
+    <section class="section" id="contact">
+      <h2>Contact form</h2>
+      <p class="meta">
+        No paid backend. Validated client-side, then opens your mail app with a filled
+        <code>mailto:</code> to gallodave.cs@gmail.com. If mail fails, copy the body.
+        Flow documented in <a href="FEATURE.md">FEATURE.md</a>.
+      </p>
+
+      <form id="contact-form" class="form" novalidate>
+        <label for="name">Name
+          <input id="name" name="name" type="text" autocomplete="name" required maxlength="120" />
+        </label>
+        <label for="email">Your email
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="200" />
+        </label>
+        <label for="company">Company / context <span class="help">(optional)</span>
+          <input id="company" name="company" type="text" maxlength="200" />
+        </label>
+        <label for="message">Message
+          <textarea id="message" name="message" required maxlength="4000" placeholder="Role, team, or question…"></textarea>
+        </label>
+        <p id="form-error" class="error" role="alert" aria-live="polite"></p>
+        <button class="btn btn-primary" type="submit">Open email draft</button>
+        <p class="help">Also: <a href="mailto:gallodave.cs@gmail.com?subject=Junior%20backend%20/%20AI-adjacent%20role">direct mailto booking</a>.</p>
+      </form>
+
+      <div id="form-success" class="success" role="status" aria-live="polite">
+        <p><strong>Draft ready.</strong> Your mail client should open with the message filled in. Send it from there.</p>
+        <p>If nothing opened, use the button below and paste into an email to <strong>gallodave.cs@gmail.com</strong> with subject <em>Junior backend / AI-adjacent role</em>.</p>
+        <button type="button" class="btn btn-secondary" id="copy-body">Copy message body</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Plant Your Flag early · <a href="https://internship.flyrank.ai/verify" rel="noopener noreferrer" target="_blank">FlyRank verify</a></p>
+    </div>
+  </footer>
+  <script src="form.js" defer></script>
+</body>
+</html>
