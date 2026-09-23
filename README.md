@@ -26,6 +26,9 @@ AI Fluency + Backend track work for **Dave Andrei Almia Gallo**.
 ### Deployment & Infrastructure  
 - [`projects/empty-but-live/`](projects/empty-but-live/) — Minimal deployment example
 
+### Background jobs
+- [`projects/report-jobs/`](projects/report-jobs/) — **BE-06**: FastAPI + Inngest report jobs (202 + poll + cron)
+
 ### Web Scraping (Planned)
 - [`projects/polite-scraper/`](projects/polite-scraper/) — **BE-05**: Polite Books-to-Scrape scraper (60 books, cache, validation, run report)
 
