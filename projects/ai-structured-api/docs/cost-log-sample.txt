@@ -1,0 +1,1 @@
+{"ts":"2026-09-23T13:51:04.828602+00:00","provider":"mock","model":"mock-deterministic-v1","ok":true,"prompt_tokens":88,"completion_tokens":38,"total_tokens":126,"cost_usd":0.0,"text_chars":86}

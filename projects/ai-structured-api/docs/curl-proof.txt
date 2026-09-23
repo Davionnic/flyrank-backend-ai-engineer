@@ -1,0 +1,53 @@
+=== BE-07 curl proof 2026-09-23 21:51 CST (Asia/Shanghai) ===
+
+--- GET /health ---
+HTTP/1.1 200 OK
+date: Wed, 23 Sep 2026 13:51:04 GMT
+server: uvicorn
+content-length: 82
+content-type: application/json
+
+{"status":"ok","llm_enabled":true,"mock_llm":true,"model":"mock-deterministic-v1"}
+
+--- POST /v1/extract (happy path) ---
+HTTP/1.1 200 OK
+date: Wed, 23 Sep 2026 13:51:04 GMT
+server: uvicorn
+content-length: 301
+content-type: application/json
+
+{"result":{"summary":"The new product update is excellent.","tags":["product","customer","quality","performance","update"],"sentiment":"positive","confidence":0.84},"provider":"mock","model":"mock-deterministic-v1","usage":{"prompt_tokens":88,"completion_tokens":38,"total_tokens":126,"cost_usd":0.0}}
+
+--- POST /v1/extract (empty text -> 422) ---
+HTTP/1.1 422 Unprocessable Content
+date: Wed, 23 Sep 2026 13:51:04 GMT
+server: uvicorn
+content-length: 153
+content-type: application/json
+
+{"detail":[{"type":"value_error","loc":["body","text"],"msg":"Value error, text must not be empty or whitespace-only","input":"   ","ctx":{"error":{}}}]}
+
+--- POST /v1/extract (missing text -> 422) ---
+HTTP/1.1 422 Unprocessable Content
+date: Wed, 23 Sep 2026 13:51:04 GMT
+server: uvicorn
+content-length: 87
+content-type: application/json
+
+{"detail":[{"type":"missing","loc":["body","text"],"msg":"Field required","input":{}}]}
+
+--- Kill switch LLM_ENABLED=false on :8008 -> 503 ---
+HTTP/1.1 503 Service Unavailable
+date: Wed, 23 Sep 2026 13:51:06 GMT
+server: uvicorn
+content-length: 65
+content-type: application/json
+
+{"detail":"LLM calls disabled (LLM_ENABLED=false / kill switch)"}
+
+--- cost log sample ---
+total 12
+drwxr-xr-x 2 box box 4096 Sep 23 21:51 .
+drwxr-xr-x 7 box box 4096 Sep 23 21:50 ..
+-rw-r--r-- 1 box box  194 Sep 23 21:51 cost.jsonl
+{"ts":"2026-09-23T13:51:04.828602+00:00","provider":"mock","model":"mock-deterministic-v1","ok":true,"prompt_tokens":88,"completion_tokens":38,"total_tokens":126,"cost_usd":0.0,"text_chars":86}
