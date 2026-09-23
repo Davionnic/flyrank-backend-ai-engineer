@@ -1,0 +1,17 @@
+{
+  "start_time": "2026-09-23T10:31:03.459941",
+  "end_time": "2026-09-23T10:31:38.376680",
+  "total_runtime_seconds": 34.916739,
+  "catalogue_pages_discovered": 3,
+  "books_discovered": 61,
+  "books_successfully_processed": 60,
+  "validation_errors": 0,
+  "failed_pages": 1,
+  "cache_hits": 3,
+  "network_requests": 63,
+  "retry_attempts": 0,
+  "error_summary": {
+    "HTTPError_404": 1
+  },
+  "sample_book_url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
+}
