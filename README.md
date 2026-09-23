@@ -12,6 +12,7 @@ AI Fluency + Backend track work for **Dave Andrei Almia Gallo**.
 - `work/week-1/` — Workflow audits, sitemap toolkit
 - `work/week-2/` — Prompt fundamentals, ladder techniques
 - `work/week-3/` — Identity kit, consistency frameworks
+- `work/week-4/` — FL-04 automation workflow, FL-05 agents/MCP, empty-but-live
 - `work/week-5/` — Personal agent specs, explanations
 - `work/ai-fluency-capstone/` — Capstone project work
 

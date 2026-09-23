@@ -1,0 +1,56 @@
+# Break-your-own-site curl evidence
+Checked at: 2026-09-23 21:23:18 CST
+
+## Internal HEAD
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/index.html
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/about.html
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/work.html
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/cv.md
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/favicon.svg
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/styles.css
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/form.js
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/404.html
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/FEATURE.md
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/README.md
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/DNS-WALKTHROUGH.md
+200 https://davionnic.github.io/flyrank-backend-ai-engineer/SUBMISSION.md
+404 https://davionnic.github.io/flyrank-backend-ai-engineer/bogus-missing-page.html
+
+## External HEAD (follow redirects)
+200 https://internship.flyrank.ai/verify
+200 https://github.com/Davionnic
+200 https://github.com/Davionnic/flyrank-backend-ai-engineer
+404 https://github.com/Zeref538/ACRA
+200 https://acra-sandy.vercel.app/
+200 https://davionnic.github.io/empty-but-live/
+200 https://www.linkedin.com/uas/login?session_redirect=%2Fsearch%2Fresults%2Fall%2F%3Fkeywords%3DDave%2520Andrei%2520Almia%2520Gallo&skipRedirect=true
+SKIP mailto (not HTTP) mailto:gallodave.cs@gmail.com
+
+## HTTPS / TLS on root
+http_code=200 ssl_verify_result=0 scheme=https
+
+## Meta / badge from live index.html
+7:  <meta name="description" content="Backend-focused CS undergrad. Ships services that put AI behind real checks. Open to junior backend / AI-adjacent roles." />
+9:  <!-- Analytics: pending — no tracking ID yet. See README Analytics section. No GA. Privacy-friendly placeholder only. -->
+10:  <meta property="og:title" content="Dave Andrei Almia Gallo — Backend / AI-adjacent" />
+11:  <meta property="og:description" content="Ships backend services that put AI behind real checks. Evals catch failures. Only claim what a run can prove." />
+12:  <meta property="og:type" content="website" />
+13:  <meta property="og:url" content="https://davionnic.github.io/flyrank-backend-ai-engineer/" />
+14:  <meta name="twitter:card" content="summary" />
+15:  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+35:        Dave Andrei Almia Gallo — CS undergrad (OLFU), Backend AI Engineer at FlyRank.
+48:      <div class="badge-row">
+49:        <a class="badge" href="https://internship.flyrank.ai/verify" rel="noopener noreferrer" target="_blank">
+50:          FlyRank graduate — verify
+52:        <a class="badge" href="https://github.com/Davionnic" rel="noopener noreferrer" target="_blank">GitHub</a>
+53:        <a class="badge" href="https://www.linkedin.com/search/results/all/?keywords=Dave%20Andrei%20Almia%20Gallo" rel="noopener noreferrer" target="_blank">LinkedIn (search)</a>
+76:      <p>© 2026 Dave Andrei Almia Gallo · <a href="https://github.com/Davionnic/flyrank-backend-ai-engineer">Source</a> · Analytics pending (see README)</p>
+
+## Favicon body (first bytes)
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DG">
+  <rect width="64" height="64" rx="12" fill="#0b1220"/>
+  <text x="32" y="42" text-anchor="middle" font-family="
+
+## lighthouse
+lighthouse-cli not installed; skipped

@@ -1,0 +1,86 @@
+{
+  "pipeline": "FL-04 local case-study factory",
+  "steps": [
+    "1 extract bullets",
+    "2 draft three-beat case",
+    "3 voice-card punch"
+  ],
+  "voice": "direct, plain, blunt, no buzzwords, show the work",
+  "started_utc": "2026-09-23T13:24:32.890018+00:00",
+  "finished_utc": "2026-09-23T13:24:32.893841+00:00",
+  "run_count": 5,
+  "runs": [
+    {
+      "input": "01-acra.md",
+      "slug": "01-acra",
+      "output_dir": "outputs/01-acra",
+      "files": [
+        "01-bullets.md",
+        "02-three-beat.md",
+        "03-voice-card.md"
+      ],
+      "elapsed_sec": 0.0012,
+      "chars_in": 1054,
+      "chars_out_voice": 1185,
+      "voice_preview": "signs maps posters with color codes collapse for those viewers. global filters wreck the whole image. redesign doesnt sc"
+    },
+    {
+      "input": "02-task-crud.md",
+      "slug": "02-task-crud",
+      "output_dir": "outputs/02-task-crud",
+      "files": [
+        "01-bullets.md",
+        "02-three-beat.md",
+        "03-voice-card.md"
+      ],
+      "elapsed_sec": 0.0007,
+      "chars_in": 1108,
+      "chars_out_voice": 962,
+      "voice_preview": "easy to think youre on Postgres when DATABASE_URL is missing and you silently hit SQLite."
+    },
+    {
+      "input": "03-supabase-auth.md",
+      "slug": "03-supabase-auth",
+      "output_dir": "outputs/03-supabase-auth",
+      "files": [
+        "01-bullets.md",
+        "02-three-beat.md",
+        "03-voice-card.md"
+      ],
+      "elapsed_sec": 0.0006,
+      "chars_in": 839,
+      "chars_out_voice": 948,
+      "voice_preview": "without the confirm-email toggle, \"it doesnt work\" looks like a code bug when its a dashboard setting."
+    },
+    {
+      "input": "04-polite-scraper.md",
+      "slug": "04-polite-scraper",
+      "output_dir": "outputs/04-polite-scraper",
+      "files": [
+        "01-bullets.md",
+        "02-three-beat.md",
+        "03-voice-card.md"
+      ],
+      "elapsed_sec": 0.0006,
+      "chars_in": 914,
+      "chars_out_voice": 880,
+      "voice_preview": "need a scraper assignment that proves politeness (delay, UA, cache) without looking like a reckless crawl of a real site"
+    },
+    {
+      "input": "05-empty-but-live.md",
+      "slug": "05-empty-but-live",
+      "output_dir": "outputs/05-empty-but-live",
+      "files": [
+        "01-bullets.md",
+        "02-three-beat.md",
+        "03-voice-card.md"
+      ],
+      "elapsed_sec": 0.0006,
+      "chars_in": 851,
+      "chars_out_voice": 988,
+      "voice_preview": "portfolio HTML is useless if Pages/DNS/HTTPS isnt proven \u2014 you need a live blank URL before packing content."
+    }
+  ],
+  "label": "freshly_executed_local_pipeline",
+  "reproduce": "python3 pipeline/run_pipeline.py"
+}
