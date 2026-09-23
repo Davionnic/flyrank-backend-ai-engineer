@@ -27,7 +27,7 @@ AI Fluency + Backend track work for **Dave Andrei Almia Gallo**.
 - [`projects/empty-but-live/`](projects/empty-but-live/) — Minimal deployment example
 
 ### Web Scraping (Planned)
-- [`projects/polite-scraper/`](projects/polite-scraper/) — **BE-05**: Respectful web scraper agent *(placeholder)*
+- [`projects/polite-scraper/`](projects/polite-scraper/) — **BE-05**: Polite Books-to-Scrape scraper (60 books, cache, validation, run report)
 
 ---
 
