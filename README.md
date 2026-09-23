@@ -30,6 +30,9 @@ AI Fluency + Backend track work for **Dave Andrei Almia Gallo**.
 ### Background jobs
 - [`projects/report-jobs/`](projects/report-jobs/) — **BE-06**: FastAPI + Inngest report jobs (202 + poll + cron)
 
+### AI structured extract
+- [`projects/ai-structured-api/`](projects/ai-structured-api/) — **BE-07**: FastAPI LLM extract → validated JSON (mock/OpenAI, retries, cost log, kill switch)
+
 ### Web Scraping (Planned)
 - [`projects/polite-scraper/`](projects/polite-scraper/) — **BE-05**: Polite Books-to-Scrape scraper (60 books, cache, validation, run report)
 
