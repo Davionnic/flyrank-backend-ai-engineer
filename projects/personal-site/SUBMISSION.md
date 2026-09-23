@@ -13,7 +13,7 @@ https://davionnic.github.io/flyrank-backend-ai-engineer/
 - Dynamic feature: validated mailto contact form + clipboard fallback (`FEATURE.md`)
 - Mobile-friendly CSS, SVG favicon, OG/meta tags
 - Analytics: **pending** (no GA ID; documented in README)
-- LinkedIn: **TBD** — search link used; no confirmed public profile URL at ship
+- LinkedIn: https://www.linkedin.com/in/dave-andrei-gallo-396233414/
 
 ## DNS walkthrough (short)
 
