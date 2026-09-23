@@ -1,7 +1,8 @@
-"""FlyRank BE-06 — Stage 4: cron heartbeat + full report API."""
+"""FlyRank BE-06 — FastAPI + Inngest background report jobs."""
 from __future__ import annotations
 
 import logging
+import os
 import uuid
 from typing import Any
 
@@ -10,15 +11,14 @@ import inngest.fast_api
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
+# Local Dev Server: no cloud signing key required.
+os.environ.setdefault("INNGEST_DEV", "1")
+
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("report-api")
 
-app = FastAPI(title="Report Jobs API", version="0.4.0")
-inngest_client = inngest.Inngest(
-    app_id="report-api",
-    # Local Dev Server does not need a signing key.
-    is_production=False,
-)
+app = FastAPI(title="Report Jobs API", version="1.0.0")
+inngest_client = inngest.Inngest(app_id="report-api", is_production=False)
 
 REPORTS: dict[str, dict[str, Any]] = {}
 
@@ -36,7 +36,7 @@ def health():
 async def create_report(body: ReportCreate):
     topic = (body.topic or "").strip()
     if not topic:
-        # Bad input is the caller's fault — do not enqueue; retries would not help.
+        # Client validation error — do not enqueue; retries would never help.
         raise HTTPException(status_code=400, detail="topic is required")
 
     report_id = str(uuid.uuid4())
@@ -100,13 +100,11 @@ async def make_report(ctx: inngest.Context, step: inngest.Step):
 )
 async def heartbeat(ctx: inngest.Context, step: inngest.Step):
     def summarize() -> dict[str, int]:
-        counts = {"pending": 0, "done": 0, "failed": 0, "other": 0}
+        counts = {"pending": 0, "done": 0, "failed": 0}
         for r in REPORTS.values():
-            status = r.get("status", "other")
+            status = r.get("status")
             if status in counts:
                 counts[status] += 1
-            else:
-                counts["other"] += 1
         log.info(
             "heartbeat pending=%s done=%s failed=%s total=%s",
             counts["pending"],
