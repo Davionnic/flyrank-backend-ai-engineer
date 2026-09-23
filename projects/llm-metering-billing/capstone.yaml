@@ -1,0 +1,30 @@
+# FlyRank Capstone Submission Manifest
+name: flyrank-capstone-metering-billing
+version: 1.0.0
+track: backend
+author: Dave Andrei Almia Gallo
+
+# One command to boot the system
+run: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+# Seed demo data
+seed: python -m app.seed
+
+# Test suite (all acceptance probes)
+test: python -m pytest -v
+
+# Background worker (reconciliation & alerts)
+worker: python -m app.worker
+
+base_url: http://localhost:8000
+
+# Acceptance endpoints
+endpoints:
+  health: GET /health
+  generate: POST /generate
+  usage: GET /usage
+  checkout_session: POST /billing/checkout-session
+  stripe_webhook: POST /webhooks/stripe
+  invoice: GET /billing/invoice
+  proration_preview: GET /billing/proration-preview
+
