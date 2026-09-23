@@ -14,7 +14,11 @@ logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("report-api")
 
 app = FastAPI(title="Report Jobs API", version="0.4.0")
-inngest_client = inngest.Inngest(app_id="report-api")
+inngest_client = inngest.Inngest(
+    app_id="report-api",
+    # Local Dev Server does not need a signing key.
+    is_production=False,
+)
 
 REPORTS: dict[str, dict[str, Any]] = {}
 
