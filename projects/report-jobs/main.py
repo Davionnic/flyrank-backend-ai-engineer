@@ -24,7 +24,7 @@ REPORTS: dict[str, dict[str, Any]] = {}
 
 
 class ReportCreate(BaseModel):
-    topic: str = Field(min_length=1)
+    topic: str = ""
 
 
 @app.get("/health")
